@@ -8,13 +8,13 @@
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd">
     <!--xsd和spring版本保持一致-->
 
-    <!--自动扫描包，扫描@contrller注解的控制器类-->
+    <!--自动扫描包，扫描@contrller注解的控制器类，这样不用将controller类一个一个申明为bean了-->
     <context:component-scan base-package="com.test.userinfo.controller"/>
 
     <!--前端控制器中URL模式设置为/ 配合处理静态资源-->
     <!--<mvc:default-servlet-handler/>-->
 
-    <!--配置注解驱动-->
+    <!--配置注解驱动，只要这一个注解，适配器RequestMappingHandlerAdapter和映射器RequestMappingHandlerMapping就可以省略不配了-->
     <mvc:annotation-driven/>
 
     <!-- 配置视图解析器 InternalResourceViewResolver -->

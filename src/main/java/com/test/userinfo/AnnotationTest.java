@@ -22,14 +22,17 @@ public class AnnotationTest {
         SqlSession session = sqlSessionFactory.openSession();
         UserDao userDao = session.getMapper(UserDao.class);
 
-        User user = new User();
-        user.setName("annotation");
-        user.setSex("男");
-        user.setAge(88);
+//        User user = new User();
+//        user.setName("annotation222");
+//        user.setSex("男");
+//        user.setAge(88);
+//        userDao.saveUser(user);
+//        // 查看插入数据生成的主键
+//        System.out.println("插入数据生成的主键id为：" + user.getId());
 
-        userDao.saveUser(user);
-        // 查看插入数据生成的主键
-        System.out.println("插入数据生成的主键id为：" + user.getId());
+        User user = userDao.selectUserById(1);
+        System.out.println(user);
+
         // 提交事务
         session.commit();
         // 关闭Session

@@ -23,7 +23,7 @@ public class MyBatisTest {
         //测试INSERT
         // 创建User对象
 //        User user = new User("Bob", "女", 43);
-        // 插入数据，test对饮UserMapper.xml中的namespace，save对应insert的id
+        // 插入数据，test对应UserMapper.xml中的namespace，save对应insert的id
 //        session.insert("test.addUser", user);
 
         //测试SELECT

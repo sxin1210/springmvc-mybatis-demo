@@ -27,8 +27,6 @@ public interface UserDao {
     //下面是基于注解的方式
     @Insert("INSERT INTO TB_USER(name,sex,age) VALUES(#{name},#{sex},#{age})")
     @Options(useGeneratedKeys = true, keyProperty = "id")
-//	@SelectKey(before=false,keyProperty="id",resultType=Integer.class,
-//	statement="SELECT LAST_INSERT_ID() AS id")
     int saveUser(User user);
 
     @Delete("DELETE FROM TB_USER WHERE id = #{id}")
