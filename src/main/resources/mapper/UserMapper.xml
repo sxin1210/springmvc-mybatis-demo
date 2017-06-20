@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace指用户自定义的命名空间。对应MyBatisTest调用test+id的方法时用这个 -->
+<!--<mapper namespace="test">-->
+<!--这里改成要定义的Mapper接口的全路径-->
+<mapper namespace="com.test.userinfo.dao.UserDao">
+
+    <!--
+        id="save"是唯一的标示符
+        parameterType属性指明插入时使用的参数类型
+        useGeneratedKeys="true"表示使用数据库的自动增长策略
+     -->
+    <insert id="addUser" parameterType="com.test.userinfo.entity.User" useGeneratedKeys="true">
+        INSERT INTO TB_USER(name,sex,age)
+        VALUES(#{name},#{sex},#{age})
+    </insert>
+
+    <select id="selectUser" parameterType="int" resultType="com.test.userinfo.entity.User">
+        SELECT * FROM TB_USER
+        WHERE ID = #{id}
+    </select>
+
+    <update id="updateUser" parameterType="com.test.userinfo.entity.User">
+        UPDATE TB_USER
+        SET name = #{name}, sex = #{sex}, age = #{age}
+        WHERE id=#{id}
+    </update>
+
+    <delete id="deleteUser" parameterType="int">
+        DELETE FROM TB_USER WHERE id = #{id}
+    </delete>
+</mapper>
