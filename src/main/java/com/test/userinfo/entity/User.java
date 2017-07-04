@@ -1,64 +1,66 @@
 package com.test.userinfo.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import java.io.Serializable;
 
-/**
- * Created by songxin07 on 17/6/15.
- */
 public class User implements Serializable{
-    // 用户标识
-    private Integer id;
-    // 用户姓名
-    private String name;
-    // 用户性别
-    private String sex;
-    // 用户年龄
-    private Integer age;
 
-    // 无参数构造器
+    @JsonIgnore
+    private static final long serialVersionUID = 2933489323113390448L;
+    private Integer id;			// id
+    private String loginname;	// 登录名
+    private String password;	// 密码
+    private String username;	// 用户名
+    private String phone;		// 电话
+    private String address;		// 地址
+
     public User() {
         super();
+        // TODO Auto-generated constructor stub
     }
-    // 有参数构造器
-    public User( String name, String sex, Integer age) {
-        super();
-        this.name = name;
-        this.sex = sex;
-        this.age = age;
-    }
-    // setter和getter方法
     public Integer getId() {
         return id;
     }
     public void setId(Integer id) {
         this.id = id;
     }
-    public String getName() {
-        return name;
+    public String getLoginname() {
+        return loginname;
     }
-    public void setName(String name) {
-        this.name = name;
+    public void setLoginname(String loginname) {
+        this.loginname = loginname;
     }
-    public String getSex() {
-        return sex;
+    public String getPassword() {
+        return password;
     }
-    public void setSex(String sex) {
-        this.sex = sex;
+    public void setPassword(String password) {
+        this.password = password;
     }
-    public Integer getAge() {
-        return age;
+    public String getUsername() {
+        return username;
     }
-    public void setAge(Integer age) {
-        this.age = age;
+    public void setUsername(String username) {
+        this.username = username;
     }
-
+    public String getPhone() {
+        return phone;
+    }
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+    public String getAddress() {
+        return address;
+    }
+    public void setAddress(String address) {
+        this.address = address;
+    }
     @Override
     public String toString() {
-        return "User [id=" + id + ", name=" + name + ", sex=" + sex + ", age="
-                + age + "]";
+        return "User [id=" + id + ", loginname=" + loginname + ", password="
+                + password + ", username=" + username + ", phone=" + phone
+                + ", address=" + address + "]";
     }
-
 
 
 }
-

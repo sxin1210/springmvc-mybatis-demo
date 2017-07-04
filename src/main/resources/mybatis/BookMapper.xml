@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!--namespace要和Mapper类全路径名保持一致，id和方法名保持一直，parameterType和方法得参数类型保持一致-->
+<mapper namespace="com.test.userinfo.mapper.BookMapper">
+    <delete id="deleteBookByID" parameterType="int">
+        delete from tb_book where id=#{id}
+    </delete>
+</mapper>
